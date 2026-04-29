@@ -427,3 +427,10 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# dart extensions 
+build/
+.dart_tool/
+.pub/
+.vscode/
+.DS_Store
