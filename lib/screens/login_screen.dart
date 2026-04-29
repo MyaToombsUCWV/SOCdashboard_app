@@ -20,7 +20,8 @@ class _LoginScreenState extends State<LoginScreen> {
       MaterialPageRoute(builder: (_) => const DashboardScreen()),
     );
   }
-
+//creating login screen options 
+  //enter email & password (currently accepts anything. will be updated for actual authentication in future updates)
   @override
   Widget build(BuildContext context) {
     return Scaffold(
