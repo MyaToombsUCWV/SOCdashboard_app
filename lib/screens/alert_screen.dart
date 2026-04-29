@@ -3,7 +3,7 @@ import '../data/sample_data.dart';
 
 class AlertsScreen extends StatelessWidget {
   const AlertsScreen({super.key});
-
+//creating alert levels and associating colors
   Color severityColor(String severity) {
     switch (severity) {
       case "Critical":
