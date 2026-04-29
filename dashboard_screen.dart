@@ -11,6 +11,7 @@ import 'settings_screen.dart';
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
+//creating main dashboard screen
   Widget statCard(String title, String value, IconData icon) {
     return Card(
       child: SizedBox(
@@ -45,7 +46,7 @@ class DashboardScreen extends StatelessWidget {
               child: Text("Mya SOC"),
             ),
             ListTile(
-              title: const Text("Alerts"),
+              title: const Text("Alerts"), //add alerts 
               onTap: () {
                 Navigator.push(
                   context,
@@ -56,7 +57,7 @@ class DashboardScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              title: const Text("Devices"),
+              title: const Text("Devices"), //add devices
               onTap: () {
                 Navigator.push(
                   context,
@@ -78,7 +79,7 @@ class DashboardScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              title: const Text("Settings"),
+              title: const Text("Settings"), //add settings
               onTap: () {
                 Navigator.push(
                   context,
@@ -108,6 +109,7 @@ class DashboardScreen extends StatelessWidget {
                 statCard("Incidents", "4", Icons.bug_report),
               ],
             ),
+            //creating the chart
             const SizedBox(height: 30),
             Expanded(
               child: Card(
