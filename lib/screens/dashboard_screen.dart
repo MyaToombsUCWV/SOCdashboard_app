@@ -1,7 +1,8 @@
+// lib/screens/dashboard_screen.dart
+
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
-import '../data/sample_data.dart';
 import 'alert_screen.dart';
 import 'devices_screen.dart';
 import 'reports_screen.dart';
@@ -20,12 +21,12 @@ class DashboardScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(icon, size: 32, color: Colors.cyanAccent),
+              Icon(icon, size: 30, color: Colors.cyanAccent),
               const Spacer(),
-              Text(title, style: const TextStyle(color: Colors.white70)),
+              Text(title),
               Text(
                 value,
-                style: const TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                style: const TextStyle(fontSize: 26),
               ),
             ],
           ),
@@ -34,55 +35,58 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
-  void openScreen(BuildContext context, Widget screen) {
-    Navigator.pop(context);
-    Navigator.push(context, MaterialPageRoute(builder: (_) => screen));
-  }
-
   @override
   Widget build(BuildContext context) {
-    final criticalAlerts =
-        sampleAlerts.where((alert) => alert.severity == "Critical").length;
-
     return Scaffold(
       drawer: Drawer(
         child: ListView(
           children: [
             const DrawerHeader(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Icon(Icons.security, size: 42, color: Colors.cyanAccent),
-                  SizedBox(height: 12),
-                  Text("Sentinel SOC", style: TextStyle(fontSize: 24)),
-                  Text("Prototype Dashboard"),
-                ],
-              ),
+              child: Text("Mya SOC"),
             ),
             ListTile(
-              leading: const Icon(Icons.dashboard),
-              title: const Text("Dashboard"),
-              onTap: () => Navigator.pop(context),
-            ),
-            ListTile(
-              leading: const Icon(Icons.warning),
               title: const Text("Alerts"),
-              onTap: () => openScreen(context, const AlertsScreen()),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const AlertsScreen(),
+                  ),
+                );
+              },
             ),
             ListTile(
-              leading: const Icon(Icons.computer),
               title: const Text("Devices"),
-              onTap: () => openScreen(context, const DevicesScreen()),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const DevicesScreen(),
+                  ),
+                );
+              },
             ),
             ListTile(
-              leading: const Icon(Icons.description),
               title: const Text("Reports"),
-              onTap: () => openScreen(context, const ReportsScreen()),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const ReportsScreen(),
+                  ),
+                );
+              },
             ),
             ListTile(
-              leading: const Icon(Icons.settings),
               title: const Text("Settings"),
-              onTap: () => openScreen(context, const SettingsScreen()),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const SettingsScreen(),
+                  ),
+                );
+              },
             ),
           ],
         ),
@@ -99,9 +103,9 @@ class DashboardScreen extends StatelessWidget {
               runSpacing: 20,
               children: [
                 statCard("Threat Score", "92%", Icons.shield),
-                statCard("Open Alerts", "${sampleAlerts.length}", Icons.warning),
-                statCard("Critical Alerts", "$criticalAlerts", Icons.dangerous),
-                statCard("Devices", "${sampleDevices.length}", Icons.computer),
+                statCard("Open Alerts", "17", Icons.warning),
+                statCard("Devices Online", "83", Icons.computer),
+                statCard("Incidents", "4", Icons.bug_report),
               ],
             ),
             const SizedBox(height: 30),
@@ -109,40 +113,22 @@ class DashboardScreen extends StatelessWidget {
               child: Card(
                 child: Padding(
                   padding: const EdgeInsets.all(20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        "Alert Activity Over Time",
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 20),
-                      Expanded(
-                        child: LineChart(
-                          LineChartData(
-                            gridData: const FlGridData(show: true),
-                            titlesData: const FlTitlesData(show: true),
-                            borderData: FlBorderData(show: true),
-                            lineBarsData: [
-                              LineChartBarData(
-                                spots: const [
-                                  FlSpot(0, 3),
-                                  FlSpot(1, 5),
-                                  FlSpot(2, 4),
-                                  FlSpot(3, 8),
-                                  FlSpot(4, 6),
-                                  FlSpot(5, 10),
-                                  FlSpot(6, 7),
-                                ],
-                                isCurved: true,
-                                barWidth: 4,
-                                dotData: const FlDotData(show: true),
-                              ),
-                            ],
-                          ),
+                  child: LineChart(
+                    LineChartData(
+                      lineBarsData: [
+                        LineChartBarData(
+                          spots: const [
+                            FlSpot(0, 3),
+                            FlSpot(1, 5),
+                            FlSpot(2, 4),
+                            FlSpot(3, 7),
+                            FlSpot(4, 6),
+                            FlSpot(5, 8),
+                          ],
+                          isCurved: true,
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),

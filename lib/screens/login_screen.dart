@@ -1,3 +1,5 @@
+// lib/screens/login_screen.dart
+
 import 'package:flutter/material.dart';
 import 'dashboard_screen.dart';
 
@@ -27,47 +29,33 @@ class _LoginScreenState extends State<LoginScreen> {
           child: SizedBox(
             width: 400,
             child: Padding(
-              padding: const EdgeInsets.all(24),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(Icons.security, size: 60, color: Colors.cyanAccent),
-                  const SizedBox(height: 12),
                   const Text(
-                    "Sentinel SOC",
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    "Mya SOC",
+                    style: TextStyle(fontSize: 28),
                   ),
-                  const SizedBox(height: 8),
-                  const Text("Security Operations Dashboard Prototype"),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 20),
                   TextField(
                     controller: email,
                     decoration: const InputDecoration(
                       labelText: "Email",
-                      border: OutlineInputBorder(),
                     ),
                   ),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 10),
                   TextField(
                     controller: password,
                     obscureText: true,
                     decoration: const InputDecoration(
                       labelText: "Password",
-                      border: OutlineInputBorder(),
                     ),
                   ),
                   const SizedBox(height: 20),
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: login,
-                      child: const Text("Login"),
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  const Text(
-                    "Prototype login: any email and password works",
-                    style: TextStyle(fontSize: 12, color: Colors.white54),
+                  ElevatedButton(
+                    onPressed: login,
+                    child: const Text("Login"),
                   ),
                 ],
               ),
