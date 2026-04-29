@@ -1,4 +1,4 @@
-class DeviceModel {
+class DeviceModel { //model in which device models will be displayed
   final String name;
   final String ipAddress;
   final String status;
