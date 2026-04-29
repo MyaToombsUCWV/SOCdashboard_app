@@ -1,6 +1,6 @@
 import '../models/alert_model.dart';
 import '../models/device_model.dart';
-
+//creating sample data to populate the app
 final sampleAlerts = [
   AlertModel(
     title: "Critical Malware Detected",
