@@ -10,7 +10,7 @@ import 'settings_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
-
+//creating main dashboard screen
   Widget statCard(String title, String value, IconData icon) {
     return Card(
       child: SizedBox(
@@ -45,7 +45,7 @@ class DashboardScreen extends StatelessWidget {
               child: Text("Mya SOC"),
             ),
             ListTile(
-              title: const Text("Alerts"),
+              title: const Text("Alerts"), //creating alerts display
               onTap: () {
                 Navigator.push(
                   context,
@@ -56,7 +56,7 @@ class DashboardScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              title: const Text("Devices"),
+              title: const Text("Devices"), //creating devices display
               onTap: () {
                 Navigator.push(
                   context,
@@ -67,7 +67,7 @@ class DashboardScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              title: const Text("Reports"),
+              title: const Text("Reports"), //creating reports display
               onTap: () {
                 Navigator.push(
                   context,
@@ -92,7 +92,7 @@ class DashboardScreen extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        title: const Text("SOC Dashboard"),
+        title: const Text("SOC Dashboard"), //creating dashboard summary
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -102,13 +102,13 @@ class DashboardScreen extends StatelessWidget {
               spacing: 20,
               runSpacing: 20,
               children: [
-                statCard("Threat Score", "92%", Icons.shield),
+                statCard("Threat Score", "92%", Icons.shield), //creating icons 
                 statCard("Open Alerts", "17", Icons.warning),
                 statCard("Devices Online", "83", Icons.computer),
                 statCard("Incidents", "4", Icons.bug_report),
               ],
             ),
-            const SizedBox(height: 30),
+            const SizedBox(height: 30), //creating data chart
             Expanded(
               child: Card(
                 child: Padding(
