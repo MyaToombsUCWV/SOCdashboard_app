@@ -8,7 +8,7 @@ class SettingsScreen extends StatefulWidget {
   @override
   State<SettingsScreen> createState() => _SettingsScreenState();
 }
-
+//settings menu with toggle on/off option
 class _SettingsScreenState extends State<SettingsScreen> {
   bool notifications = true;
 
