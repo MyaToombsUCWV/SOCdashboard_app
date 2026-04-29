@@ -11,7 +11,7 @@ class SentinelApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Mya SOC',
+      title: 'Mya SOC', //creating main UI and color scheme of the app
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: const Color(0xFF0D1117),
@@ -26,7 +26,7 @@ class SentinelApp extends StatelessWidget {
           elevation: 0,
         ),
       ),
-      home: const LoginScreen(),
+      home: const LoginScreen(), //app opens on login screen automatically
     );
   }
 }
