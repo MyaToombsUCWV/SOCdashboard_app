@@ -1,4 +1,4 @@
-class AlertModel {
+class AlertModel { //model in which alerts will be displayed
   final String title;
   final String severity;
   final String source;
