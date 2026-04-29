@@ -11,7 +11,7 @@ class SettingsScreen extends StatefulWidget {
 
 class _SettingsScreenState extends State<SettingsScreen> {
   bool notifications = true;
-
+//adding toggles for different settings
   @override
   Widget build(BuildContext context) {
     return Scaffold(
