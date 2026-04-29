@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 
 class DevicesScreen extends StatelessWidget {
   const DevicesScreen({super.key});
-
+//creating devices screen 
+  //adding example devices
   @override
   Widget build(BuildContext context) {
     return Scaffold(
