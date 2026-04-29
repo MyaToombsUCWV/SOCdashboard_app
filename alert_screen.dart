@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 class AlertsScreen extends StatelessWidget {
   const AlertsScreen({super.key});
 
+  //adding example alerts
   @override
   Widget build(BuildContext context) {
     final alerts = [
